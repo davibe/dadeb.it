@@ -1,6 +1,6 @@
 
 import markdown from 'markdown-in-js'
-
+import cv from './cv.md'
 
 const Content = () => markdown`
 

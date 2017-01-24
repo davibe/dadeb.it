@@ -11,6 +11,7 @@
   "author": "Davide Bertola <dade@dadeb.it>",
   "license": "ISC",
   "dependencies": {
+    "babel-plugin-inline-import": "^2.0.4",
     "babel-plugin-markdown-react": "^1.0.15",
     "babel-plugin-static-fs": "^1.1.0",
     "cowsay-browser": "^1.1.8",

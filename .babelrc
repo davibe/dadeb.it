@@ -2,5 +2,13 @@
   "presets": [
     "next/babel"
   ],
-  "plugins": ["static-fs", "markdown-in-js/babel"]
+  "plugins": [
+    "static-fs", 
+    "markdown-in-js/babel", 
+    [
+      "babel-plugin-inline-import", {
+        "extensions": [".md"]
+      }
+    ]
+  ]
 }
