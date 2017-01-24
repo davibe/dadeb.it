@@ -22,7 +22,7 @@ Profile
 Born in 20 may, 1983
 
 Contact address:  
-Corso Fiume n. 91
+Corso Fiume n. 91  
 13100 Vercelli, Italy
 
 (+39) 348 92 73 808  
