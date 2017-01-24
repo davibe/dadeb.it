@@ -37,7 +37,6 @@ const A4 = ({children}) => (
           padding: 0px;
           width: 21cm;
           height: 29.7cm;
-          border: 1px solid #eee;
         }
       }
     `}</style>
