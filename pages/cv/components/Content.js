@@ -34,9 +34,9 @@ Current activities
 #### Chief Technology Officer  *Sept 2015 - Today*
 
 > [Backoffice](https://www.dropbox.com/sh/nzhmql0dn77fwaq/AAA9Iry1l-PG2IlwtGoo2lOga?dl=0)   
-> [Social](https://www.dropbox.com/sh/8e3oivmqt2gi4al/AAAAMWGoCw1ty-b_vHsPdbIEa?dl=0)   
+> [Web/Social](https://www.dropbox.com/sh/8e3oivmqt2gi4al/AAAAMWGoCw1ty-b_vHsPdbIEa?dl=0)   
 > [iOS](https://www.dropbox.com/sh/6fbancz47lccram/AADKALtwbQl6ENxkRyU9Gc84a?dl=0)   
-> [Android]()   
+> [Android](https://www.dropbox.com/sh/z61ac9lmhdymbm6/AAAIPe5XSXYxRmrqPAlgZDe8a?dl=0)   
 
 [Grocerest](http://www.grocerest.com) - Via Roero di cortanze n.2, 10124 Torino, Italy
 
@@ -66,7 +66,7 @@ Client/server multimedia content delivery applications for internet connected
 devices (Desktop/Web, Mobile, SmartTVs). 
 Asset encryption, protected transport, access control and stats aggregation.  
 DASH (protocol) streaming server development.  
-Partecipation to development of severa European / Chinese projects. 
+Partecipation to development of several European / Chinese projects. 
 Worked on new MPEG standards from proposal to final drafts.  
 
 *C, C++, Objective-C, Javascript, Node.js, express.js, Backbone.js, GSreamer,
