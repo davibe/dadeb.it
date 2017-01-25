@@ -3,10 +3,10 @@
 
 const Typography = (props) =>
   <div className="typography-cv">
-
     {props.children}
-
     <style jsx global>{`
+
+/* I manually scope style to this element using .typography-cv */
 
 .typography-cv {
   margin-left: 4.5cm;
@@ -27,7 +27,7 @@ const Typography = (props) =>
   color: #589;
 }
 
-.typography-cv h2, 
+.typography-cv h2,
 .typography-cv h3 {
   color: #8bc;
 }
@@ -67,8 +67,8 @@ const Typography = (props) =>
 
 /* things on the left column */
 
-.typography-cv h1, 
-.typography-cv h2, 
+.typography-cv h1,
+.typography-cv h2,
 .typography-cv h3 {
   width: 4.5cm;
   margin-left: -5cm;
@@ -114,7 +114,7 @@ const Typography = (props) =>
 .typography-cv h4 + p,
 .typography-cv h4 + blockquote + p {
   font-variant: small-caps;
-  text-rendering: optimizeSpeed !important;  
+  text-rendering: optimizeSpeed !important;
   margin-bottom: 0;
 }
 
@@ -140,8 +140,8 @@ const Typography = (props) =>
   text-align: right;
   float: left;
 }
-    `}</style>
 
+    `}</style>
   </div>
 
 export default Typography

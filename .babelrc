@@ -3,12 +3,6 @@
     "next/babel"
   ],
   "plugins": [
-    "static-fs", 
-    "markdown-in-js/babel", 
-    [
-      "babel-plugin-inline-import", {
-        "extensions": [".md"]
-      }
-    ]
+    "markdown-in-js/babel"
   ]
 }

@@ -17,7 +17,7 @@ const A4 = ({children}) => (
           margin-bottom: 1px;
           padding: 0px;
           width: 21cm;
-          //height: 29.7cm;
+          // height: 29.7cm;
           border: 1px solid #ccc;
           background-color: white;
         }
@@ -26,7 +26,7 @@ const A4 = ({children}) => (
           margin-top: 1cm;
           margin-bottom: 2cm;
           width: 19cm;
-          //height: 26.7cm;
+          // height: 26.7cm;
         }
       }
 
