@@ -18,7 +18,7 @@ Profile
 > [GitHub](https://github.com/davibe)  
 
 !["avatar"](static/cv.png)
-Born in 20 may, 1983
+Born on May 1, 1983
 
 Contact address:  
 Corso Fiume n. 91  
