@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "now": "now",
+    "now": "now -a dadeb",
     "start": "next start"
   },
   "author": "Davide Bertola <dade@dadeb.it>",
