@@ -11,8 +11,6 @@
   "author": "Davide Bertola <dade@dadeb.it>",
   "license": "ISC",
   "dependencies": {
-    "babel-plugin-inline-import": "^2.0.4",
-    "babel-plugin-markdown-react": "^1.0.15",
     "markdown-in-js": "^1.1.3",
     "next": "^2.0.0-beta.18",
     "prismjs": "^1.6.0"

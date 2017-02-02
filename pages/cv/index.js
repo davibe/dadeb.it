@@ -4,7 +4,7 @@ import Content from './components/Content'
 import Typography from './components/Typography'
 
 
-export default () => 
+export default () =>
   <div>
 
     <Head>
@@ -17,7 +17,6 @@ export default () =>
           background-color: #eee;
         }
       `}</style>
-      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" />
     </Head>
 
     <A4>

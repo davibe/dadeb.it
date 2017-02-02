@@ -141,7 +141,7 @@ Mobile application development, maintainment and porting from iOS to Android
 #### Mobile Developer    *2011 - 2012*
 
 > [GTT App](https://itunes.apple.com/it/app/gtt-mobile/id531319309?mt=8&uo=4)  
-> [jQMobile Author](https://github.com/jquery/jquery-mobile/blob/master/AUTHORS.txt#L51)
+> [jQMobile Author](https://github.com/jquery/jquery-mobile/blob/master/AUTHORS.txt#L53)
 
 [Synesthesia](http://www.synesthesia.it) - Via Amedeo Peyron 29, Torino
 

@@ -8,6 +8,8 @@ const Typography = (props) =>
 
 /* I manually scope style to this element using .typography-cv */
 
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
 .typography-cv {
   margin-left: 4.5cm;
   padding-left: .2cm;
