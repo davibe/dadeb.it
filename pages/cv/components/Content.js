@@ -42,7 +42,7 @@ Current activities
 
 Hired, grown, inspired, managed 5+ tech team.
 Built cloud based backend, iOS and Android apps, from requirements to delivery.
-Mixed scrum + kanban agile methods.
+Mixed scrum + kanban agile methods.  
 1M products, 30k users so far.
 
 *Amazon AWS + ECS, CoffeeScript, Java ES6, Next.js, React, Redux, Swift, SnapKit, 

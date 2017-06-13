@@ -15,6 +15,7 @@ export default () =>
         }
         body   {
           background-color: #eee;
+          margin: 2cm;
         }
       `}</style>
     </Head>

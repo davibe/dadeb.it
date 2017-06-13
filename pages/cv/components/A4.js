@@ -18,6 +18,7 @@ const A4 = ({children}) => (
           padding: 0px;
           width: 21cm;
           // height: 29.7cm;
+          // overflow-y: scroll;
           border: 1px solid #ccc;
           background-color: white;
         }
