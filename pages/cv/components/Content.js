@@ -153,7 +153,7 @@ Appcelerator*
 
 #### Consultant Developer   *sep 2011 - feb 2012*
 
-> [Camut Cloud](../camut/readme.html)
+> [Camut Cloud](../static/camut/readme.html)
 
 [Deltatre](http://www.deltatre.it) - Via Francesco Millio 41, 10141 Torino
 
