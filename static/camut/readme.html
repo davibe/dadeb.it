@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Camut</title>
+	<meta name="author" content="Davide Bertola"/>
+	<meta name="author" content="Diego Caravana"/>
+	<link type="text/css" rel="stylesheet" href="mmd-template/reset.css"/>
+	<link type="text/css" rel="stylesheet" href="mmd-template/page.css"/>
+	<link type="text/css" rel="stylesheet" href="mmd-template/typography.css"/>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.js">
+</script>
+<script type="text/javascript" src="mmd-template/scripts/page_decorator.js">
+</script>
+</head>
+<body>
+<h1 id="camut">Camut</h1>
+
+<p>A clouded load-testing platform.</p>
+
+<figure>
+<img src="images/Camut_Architecture.png" alt="" /></figure>
+
+
+
+<h2 id="summary">Summary</h2>
+
+<ol>
+<li><a href="#basic_concepts">Basic Concepts</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#bootstrapping">Bootstrapping</a></li>
+<li><a href="#ami_images">Manage AMI Images</a></li>
+<li><a href="#running">Running the server</a></li>
+<li><a href="#writing_test_campaign">Writing a test campaign</a></li>
+<li><a href="#workflow">Workflow</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ol>
+
+<p/>
+
+<h2 id="basic_concepts">Basic Concepts</h2>
+
+<h3 id="testcampaign">Test Campaign</h3>
+
+<p>It is the description of the campaign being conducted. Each campaign has a unique id, some options, and a test function.
+Currently the test campaign description is serialized to a <em>campaign</em> <em>file</em>.</p>
+
+<h3 id="camutserver">Camut Server</h3>
+
+<p>It is a daemon program running in a server bound to a public ip/host. It&#8217;s able to control camut drones in order to conduct a test campaign.</p>
+
+<h3 id="camutdrone">Camut Drone</h3>
+
+<p>It&#8217;s a daemon program that starts up with a given configuration and listens
+for commands from the Camut Server. The configuration itself is generated per campaign and contains the test function. </p>
+
+<p>It can also be started from command line with arguments to locally test-run a given campaign file.</p>
+
+<h3 id="camutdeployer">Camut Deployer</h3>
+
+<p>It&#8217;s a deamon program that is controlled by camut server and is capable of creating, configuring, and destroying instances over the cloud.
+There can be many implementation one for each clouded solution being targeted.
+Currently there is one <em>dummy</em> implementation that is used for testing purposes and one <em>EC2</em> implemetation used to deploy drones on Amazon EC2 clouded VPS solution or compatible.</p>
+
+<h3 id="serverconfiguration">Server configuration</h3>
+
+<p>It refers to a configuration that holds startup options for both camut server and camut deployers. It&#8217;s serialized to a file named <em>camut-conf.js</em> living in the root folder of the camut project.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+<li>Virtualenv</li>
+<li>Build essentials (gcc, autotools, ..)</li>
+</ul>
+
+<h2 id="bootstrapping">Bootstrapping Camut from source</h2>
+
+<h3 id="clonecamutsources">Clone camut sources</h3>
+
+<p>Camut sources can be checked-out using GIT as follows</p>
+
+<pre><code>git clone [repository url]
+git submodule init
+git submodule update
+</code></pre>
+
+<h3 id="generateenvironment">Generate environment</h3>
+
+<p>The project folder &#8220;camut&#8221;, cloned from repository, ensembles a complete environment generated using Python <em>buildout</em> and its recipes to make it easily replicable on different machines and keep dependencies tight.</p>
+
+<p>By convention the &#8220;camut&#8221; folder should be stored in the user home directory. We refer to this path as <em>camut_home</em>.</p>
+
+<p>As far as dependencies are satisfied building the environment should look as follws</p>
+
+<pre><code>cd $camut_home
+bash bootstrap.sh
+export PATH=$PATH:$(pwd)/bin
+bin/buildout
+</code></pre>
+
+<p>Buildout will start cloning dependencies and sources. It will install node.js, npm package manager, and use the latter to install camut dependencies. Everything is kept inside <em>camut_home</em> so that the host system is not touched in any way.</p>
+
+<h3 id="windowsnotes">Windows Notes</h3>
+
+<p>Camut does not yet completely work on Windows, but you can run the drone to
+debug your test code.</p>
+
+<p>To install it, follow these instructions:</p>
+
+<ol>
+<li><p>Install git (see <a href="http://git-scm.com/">http://git-scm.com/</a>)</p></li>
+<li><p>Install node (see <a href="http://nodejs.org/#download">http://nodejs.org/#download</a>)</p></li>
+<li><p>Install npm (see <a href="http://npmjs.org/doc/README.html">http://npmjs.org/doc/README.html</a>)</p></li>
+<li><p>Create a folder for camut files</p></li>
+<li><p>Execute</p>
+
+<pre><code>npm install underscore redis commander uuid-pure \
+  htmlparser xmlhttprequest
+git clone &lt;repo path&gt;
+</code></pre></li>
+<li><p>Change dir to camut root folder</p></li>
+<li><p>Execute local test of an campaign</p>
+
+<pre><code>node sources\drone\drone.js examples\examplecampaign.js
+</code></pre></li>
+</ol>
+
+<h2 id="ami_images">Creating EC2 AMI images</h2>
+
+<p>Camut AMI images are based on <a href="http://cloud-images.ubuntu.com/releases/11.04/release/">Ubuntu 11.04 AMI images</a>. To create a camut-image the user just needs to create a standard Ubuntu 11.04 virtual machine using the preferred bitness and instance type (default images are &#8216;t1.micro&#8217; type) for the choosen zone.</p>
+
+<p>Then, you should change some OS networking limits, adding these two lines to /etc/security/limits.conf:</p>
+
+<pre><code>* soft nofile 1000000
+* hard nofile 1000000
+</code></pre>
+
+<p>and following the complete procedure as in <a href="http://posidev.com/blog/2009/06/04/set-ulimit-parameters-on-ubuntu/">Set ulimit parameters on ubuntu</a>.</p>
+
+<p>Installing and configuring the environment is as simple as logging in the instance and following the Bootstrapping procedure. Once done you can create the AMI image using AWS Management Console</p>
+
+<ul>
+<li>Select the running instance where camut has been bootstrapped</li>
+<li>Click : Instance actions -&gt; Create image</li>
+</ul>
+
+<p>Following the wizard procedure a new AMI image will be created.</p>
+
+<p>This image will be associated to the aviability zone you worked on. It&#8217;s possible to create images for other aviability zones using the same procedure targeting different zones by hand. Another option would be to use S3 storage tools to transfer the same ami image across different availability zones.</p>
+
+<h2 id="running">Running the server</h2>
+
+<p>A configuration file must be following the
+<a href="camut-conf.example.html">camut-conf.example.js</a></p>
+
+<p>Long running daemons are managed using Python supervisor
+ref. http://supervisor.org</p>
+
+<p>To start server services use</p>
+
+<pre><code>bin/supervisord
+bin/supervisorctl start all
+</code></pre>
+
+<p>To shutdown them all</p>
+
+<pre><code>bin/supervisorctl shutdown
+</code></pre>
+
+<p>A web console is available on server&#8217;s port 9001 while supervisor is running.
+It allows the user to control processes and restart them if needed.</p>
+
+<h3 id="webresources">Web Resources</h3>
+
+<p>If the server has been correctly installed, you should be able to access the following services</p>
+
+<ul>
+<li>Camut UI on port :3001 under /ui</li>
+<li>Supervisord web console on port :9001</li>
+<li>Kue web console on port :3000</li>
+</ul>
+
+<h2 id="writing_test_campaign">Writing a test campaign</h2>
+
+<p>A test campaign file describes the configuration for the campaign and the test function to be executed by each virtual user. You can find some examples in the &#8220;examples&#8221; folder, <a href="examplecampaign.html">one of them is also code-commented</a> using docco. </p>
+
+<p>Basically 2 things need to be defined</p>
+
+<ul>
+<li>a test function</li>
+<li>a description of how the test function will be executed over the cloud</li>
+</ul>
+
+<p>More informations about campaign parameters can be found in this commented example</p>
+
+<h3 id="testfunction">Test function</h3>
+
+<pre><code>function testFunction (doneCallback) { ... }
+</code></pre>
+
+<p>Test functions accept only one parameter. This parameter is a callback that the test function <em>MUST</em> call in order to declare its iteration finished so that the virtual user simulator will know when to jump to the next step.</p>
+
+<p>This also means that it&#8217;s possibile to create 2 types of tests. If the test function calls <em>doneCallback</em> as soon as it&#8217;s work has finished the time of the itartion will depend on how long it took for the test to complete its operation. This means that some virtual user can be faster and complete more iterations per second than others, and also means that some users could finish all their iterations sooner than others</p>
+
+<p>On the other hand it&#8217;s possible to write test functions that call <em>doneCallback</em> after a fixed amount of time (i.e. using setTimeout). This way iterations will be launched always after the same amount of time, even if the previous iteration has not finished it&#8217;s work. All virtual users will run at the same peace.</p>
+
+<p>Which one of these two models has to be used is up to the operator.</p>
+
+<h3 id="testfunctionscope">Test function scope</h3>
+
+<p>Test functions run associated to one scope for each virtual user. The scope contains the following variables.</p>
+
+<ul>
+<li>&#8216;context&#8217; (defined null by default)</li>
+<li>&#8216;window&#8217; object</li>
+<li>&#8216;this&#8217; bound to window object</li>
+<li>&#8216;camut&#8217; object</li>
+</ul>
+
+<p>Context is just a variable the operator can assign anything he wants to remember across different iterations. </p>
+
+<p>Window and this objects are empty objects by default unless &#8216;browserEmulation&#8217; is specified in the campaign configuration. In this case a browser-like environment will be set up for each virtual user and window object will have the common attributes that a browser window object would have, including a document and a pre-loaded jquery instance.</p>
+
+<p>Please note that using a simulated browser environment takes almost 2Mb or ram for each virtual user being simuated, which is a lot if you want to simulate thousands of users for each instance.</p>
+
+<p>The camut object is an object containing functions that are specific to the camut environment. Currently it holds a function to report data to OpenTSDB server and a simplified http object that aims to make calling http rest api simpler.</p>
+
+<h3 id="sendingdatatoopentsdb">Sending data to OpenTSDB</h3>
+
+<p>In the test function code it&#8217;s possible to send statistical information to OpenTSDB server in any moment using the function &#8216;camut.tsdb&#8217; as follows</p>
+
+<pre><code>camut.tsdb ('test.dadeb', statValue, {
+  tag: 'tagVaue'
+});
+</code></pre>
+
+<p>The first argoument is the name of the stat being sent, which must have been configured previously on the OpenTSDB server. OpenTSDB server configuration steps are not covered in this document.</p>
+
+<p>The second paramenter is the value of the stat being sent. The last parameter is an object that describes tags that will be associated to the statistic.</p>
+
+<p>The TSDBConnector included in camut will also add his own default tags to better describe including the campaign name and the virtual user uuid. Also note that the stat is not sent right away, it gets timestamped with the current time and is added to a queue of stats that will be sent to the OpenTSDB server as soon as the connection becomes available, also handling re-connections in case of network congestion or problems.</p>
+
+<p>The default tags are:</p>
+
+<ul>
+<li>&#8216;campaign&#8217;: the campaign ID</li>
+<li>&#8216;url&#8217;: the URL of the call; since the URL can change between calls, it&#8217;s recommended to add a custom &#8216;operation&#8217; to every call to ease the filtering afterwards</li>
+<li>&#8216;error&#8217;: it can be &#8216;true&#8217; or &#8217;false; it&#8217;s recommended to filter by &#8216;error=false&#8217; when looking at &#8216;response_time&#8217; statistics since the response time of an failed call is zero</li>
+<li>&#8216;client&#8217;: the drone unique ID</li>
+<li>&#8216;callId&#8217;: the call unique ID</li>
+</ul>
+
+<h3 id="simplifiedhttpobject">Simplified HTTP object</h3>
+
+<p>Using node API to write each single http calls and managing all internals to make a request, handle timeouts, get the response, manage errors, can be a heavy work that gets repeated for each call. This is why camut offers a simpler http object that takes care of some repetitive work.</p>
+
+<p>You can use it as follows </p>
+
+<pre><code>..
+var request = new camut.http ({
+  url: 'http://www.dadeb.it/',
+  timeout: 100,
+  headers: headers,
+  method: 'GET'
+}, callback);
+
+function callback (err, data, response) {
+  console.log (err);
+  done ();
+}
+..
+</code></pre>
+
+<p>The first object can include all attributes from the standard <a href="http://nodejs.org/docs/v0.6.1/api/http.html#http.request">node http request api</a> and some additional ones</p>
+
+<ul>
+<li>&#8216;timeout&#8217;: will be used to generate &#8216;timeout&#8217; error if there is no response for more than choosen milliseconds</li>
+<li>&#8216;url&#8217;: will be user to autodetect hostname, ip and port for the request</li>
+</ul>
+
+<p>Each call will also automatically generate and send OpenTSDB statistics to the configured OpenTSDB server including</p>
+
+<ul>
+<li>&#8216;http.response_time&#8217;: measures the response time from the request start to the end of the response</li>
+<li>&#8216;http.response_begin_time&#8217;: measures the response time from the request start to the start of the response</li>
+<li>&#8216;http.received&#8217;: the amount of bytes received by socket</li>
+<li>&#8216;http.transmitted&#8217;: the amount of bytes sent by socket</li>
+<li>&#8216;http.connections&#8217;: count of concurrently opened connections</li>
+<li>&#8216;http.errors&#8217;: total count of errors</li>
+</ul>
+
+<p>The OpenTSDB server needs to be preconfigured with the aforementioned statistics.</p>
+
+<pre><code>./tsdb mkmetric http.response_time http.received http.transmitted http.connections http.errors http.response_begin_time
+</code></pre>
+
+<p>Please note that the two last ones are counters and they should be treated like that in OpenTSDB console.
+See also the <a href="http://opentsdb.net/getting-started.html">official documentation</a></p>
+
+<p>An important note: in a scenario where there can be ten of thousands of concurrently opened connections, it can be difficult if not impossible to have a clear vision on a single connection because there are too many variables involved (OS, platform, Camut itself, very long queues each with its own policies, etc.) In any case, it&#8217;s possible to obtain a higher level vision through the right statistics.</p>
+
+<h3 id="testdrivethetestcampaignfile">Testdrive the test campaign file</h3>
+
+<p>When writing the test campaign file it&#8217;s useful to be able to test it before deploy it on the cloud. To do this the camut drone can be run as a standalone shell program taking one argoument with the campaign file path.<br/>
+i.e.</p>
+
+<pre><code>cd $camut_home
+bin/drone examples/exampleCampaign.js
+</code></pre>
+
+<p>Running in this mode the camut drone will simulate all iterations of a single instance locally. No OpenTSDB data will be actually sent to the TSDB server but instead the tsdb commands will be outputted to standard output so that the user can verify what is going on. If the test includes parts where it writes to standard output those will be visible too.</p>
+
+<p>When the number of iterations are finished the process will report the time took to perform all iterations and then quit.</p>
+
+<h2 id="workflow">Workflow</h2>
+
+<p>The purpose of this sections is to define steps necessary to conduct a test campaign once the test campaign file has been written and test.</p>
+
+<p>In order to begin the camut-server must be configured and started and ready for connections.</p>
+
+<p>Assuming the sever is running with a public ip/host camut_server_ip the user can open command queue interface pointing his browser to
+&#8220;http://camut_server_ip:3000/&#8221;</p>
+
+<p>This webconsole is useful because it shows commands queued, in progress, and completed for each step of the campaign. This way the user knows if it has to wait before performing the next step even if the rest api is not blocking</p>
+
+<p>Please note that the same exact commands are available through the Camut UI, which is completely interchangeable with the command-line tool.</p>
+
+<ol>
+<li><h4 id="uploadthetestcampaignfiletothecamut-server">Upload the test campaign file to the camut-server</h4>
+
+<pre><code>cd $camut_home
+bin/camut-manager -s [camut-server ip] new [path to the campaign file]
+</code></pre>
+
+<p>This command can also update an existing campaign (there is also the specific &#8216;update&#8217; command), providing that the new version does not change the number of drones or the availability zone. In this case, the campaign must be deleted and recreated.
+It is very important to remember that Camut will hold campaigns&#8217; data only as long as its services are running: when they are stopped for whatever reason, campaigns&#8217; definitions will be lost without having any possibility to recover anything. This behavior is by design because Camut is not and should not be used as a repository of test code.</p></li>
+<li><h4 id="createdroneinstancesonthecloudforthegivencampaign">Create drone instances on the cloud for the given campaign</h4>
+
+<pre><code>bin/camut-manager spawn campaign id
+</code></pre>
+
+<p>This operations can take some time because the clouded vps service needs to reserve a number of instances for the campaign. Look ad the web console and wait for it to finish.</p></li>
+<li><h4 id="configuredronesforthegivencampaign">Configure drones for the given campaign</h4>
+
+<pre><code>bin/camut-manager -s [camut-server ip] deploy [campaign id]
+</code></pre>
+
+<p>The deployer will use ssh connection to log-in and configure each drone.</p></li>
+<li><h4 id="startthecampaigntest">Start the campaign test</h4>
+
+<pre><code>bin/camut-manager -s [camut-server ip] start [campaign id]
+</code></pre>
+
+<p>This command will create one task in queue for each instance deployed on the cloud. The tasks will remain active until test iterations are completed. Once started OpenTSDB data will be reported and should be aviable to the user on the choosen OpenTSDB server.</p></li>
+<li><h4 id="stopandfreecloudedresources">Stop and free clouded resources</h4>
+
+<p>In order to remove drone instances from the cloud the user can do</p>
+
+<pre><code>bin/camut-manager -s [camut-server ip] stop [campaign id]
+</code></pre>
+
+<p>Drones will be stopped (but will remain available).</p>
+
+<pre><code>bin/camut-manager -s camut-server ip kill campaign_id
+</code></pre>
+
+<p>Instances will be freed and the campaign will remain configured on the camut server for the next runs if any. To remove the camut campaign also from the server type</p>
+
+<pre><code>bin/camut-manager -s [camut-server ip] del [campaign id]
+</code></pre>
+
+<p>Also note that the help comands gives a list of all camut-manager available commands and options</p>
+
+<pre><code>bin/camut-manager help
+</code></pre>
+
+<p>If the user needs to kill a campaign before all iterations are finished it is possible to issue a deploy command before the kill command. This will stop drones and clean up pending jobs in the queue</p></li>
+</ol>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="etiquetteinabig-numberscontext">Etiquette in a big-numbers context</h3>
+
+<p>With Camut it is possible to generate a lot of data that is sent to the tested application, to the logs, to the statistics database, etc.
+In general, it is advisable to not waste any resource because every byte added (in a string, in a tag, etc.) can easily become a megabyte in more then one place (your application, logs, stats, etc.)
+The operatore should pay particular attention when building the test, also taking care about wasting CPU or network resources, because the test is a piece of code that will be run in parallel cycles in the same process (e.g. if you run a test with only one drone, but 100.000 times emulating 10.000 virtual users, your code will be executed 1 billion times in a single session).</p>
+
+<h3 id="generaltroubleshooting">General troubleshooting</h3>
+
+<p>It is possible to access the details of the state of Camut in any moment through some tools:</p>
+
+<ul>
+<li>in Camut UI there is a simple log to help remember the last commands executed by the operator</li>
+<li>the Supervisor console can help discover inconsistent services states through the uptime and the realtime logs</li>
+<li>Kue console offers a view of the command queues and the state of every task. From here it is possible to read the feedback of each task or delete unwanted or stuck tasks. For example, a deploy task that stays too long in the Queued queue can reveal an inconsistend or error state of the choosen deployer (e.g. EC2 Deployer) that can be amended by deleting the stuck task and restarting the corresponding service (i.e. camut-ec2deployer) from the Supervisor console</li>
+<li>from Camut UI, it is possible to access the complete logs of the various Camut services. They can give fundamental insights about the inner workings of the services. For example, a deploy task can get stuck because an EC2 instance has failed to boot properly: in the camut-ec2deployer log, this can be deducted by the connection error of ssh command.</li>
+<li>from AWS Console it is possible to double-check the state of the instances, access some important details (like IP addresses to be used by SSH access) and possibly kill the instances.</li>
+</ul>
+
+<h3 id="ec2instancesandnumberofvirtualusers">EC2 instances and number of virtual users</h3>
+
+<p>We derived some pragmatic numbers from our tests:</p>
+
+<ul>
+<li>micro instance: max 50/100 users, do not use in production, only for testing</li>
+<li>medium: N/A (32 bits)</li>
+<li>large: easily goes to 1000+ users, tested even with 10000 users without any serious problem but the large number of network operations make difficult understand the behavior of the system (server, tested app, Camut) in some cases. Remember to set an adequate rampup time with large number of users.</li>
+</ul>
+
+<h3 id="oslimitstweaking">OS limits tweaking</h3>
+
+<p>As stated above, the OS limits should be changed to accomodate the load both on clients (drones) and on the servers: a high number of call errors could be the signal that these limits are too stringent. Check them before blaming your application.</p>
+
+<p>Please note that, in some cases, only a trial-and-error process can lead to the right values for the right OS configuration keys.</p>
+
+<h3 id="ec2weirdness">EC2 weirdness</h3>
+
+<p>As per documentation, EC2 does not guarantee that all requested instances will be allocated, so the API accepts a minimum and a maximum number of instances: below the minimum the call fails. In the other case, Camut proceeds but with a number of instances lower than the requested number: this is normal and the decision to repeat the process is left to the operator to avoid wasting of resources.</p>
+
+<h3 id="knownproblems">Known problems</h3>
+
+<p>There are some issues that will be removed in the next versions or as soon as possible:</p>
+
+<ul>
+<li>rarely instances become zombies without a campaign associated (or tag in EC2) so they are not more manageable by Camut and should be terminated manually from AWS Console</li>
+<li>rarely drones gets stuck and are not more responsive to deploy command: they will be lost until kill operation</li>
+<li>Kue sometimes enters an annoying refresh loop that can be overcomed by a page refresh</li>
+<li>Kue sometimes shows number of tasks inconsistent with the corresponding list: restart redis and Camut server processes from Supervisor console</li>
+<li>rarely long-running Camut services becomes unresponsive during spawn/deploy commands: restart all Camut services from Supervisor console.</li>
+</ul>
+</body>
+</html>
