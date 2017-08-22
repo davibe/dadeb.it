@@ -31,6 +31,18 @@ dade@dadeb.it
 Current activities
 ------------------
 
+#### Architect and Team Leader *June 2017 - Today*
+
+> [Diva Mobile SDK](http://www.deltatre.com/online-solutions/diva/)
+
+[Deltatre.it](http://www.deltatre.it) - Via Francesco Millio 41, 10141 Torino (TO)
+
+Complete rewrite of the Diva Player SDK for Android and iOS (native).
+An advanced player for sport events, distributed as Android AAR and iOS Framework,
+used by clients to implement large-scale mobile applications (UEFA, CBC, NFL, ...).
+
+*Swift, Java/Android, Fastlane, TFS, CI*
+
 #### Chief Technology Officer  *Sept 2015 - Today*
 
 > [Backoffice](https://www.dropbox.com/sh/nzhmql0dn77fwaq/AAA9Iry1l-PG2IlwtGoo2lOga?dl=0)   
@@ -38,12 +50,12 @@ Current activities
 > [iOS](https://www.dropbox.com/sh/6fbancz47lccram/AADKALtwbQl6ENxkRyU9Gc84a?dl=0)   
 > [Android](https://www.dropbox.com/sh/z61ac9lmhdymbm6/AAAIPe5XSXYxRmrqPAlgZDe8a?dl=0)   
 
-[Grocerest](http://www.grocerest.com) - Via Roero di cortanze n.2, 10124 Torino, Italy
+[Grocerest](http://www.grocerest.com) - Via Roero di cortanze n.2, 10124 Torino (TO)
 
 Hired, grown, inspired, managed 5+ tech team.
 Built cloud based backend, iOS and Android apps, from requirements to delivery.
 Mixed scrum + kanban agile methods.  
-1M products, 30k users so far.
+1M products, 30k users so far. The startup is currently idling while waiting for new funds.
 
 *Amazon AWS + ECS, CoffeeScript, Java ES6, Next.js, React, Redux, Swift, SnapKit, 
 Java, Docker, Jenkins, Branch.io, Tune, GAnalitics*
@@ -206,7 +218,7 @@ Projects
 
 ## Skills
 
-Python, C, Javascript, Vim, Autotools, gcc, gdb, XCode, OBJC, Bash, Cocoa,
+Python, C, Swift, Javascript, Vim, Autotools, gcc, gdb, XCode, OBJC, Bash, Cocoa,
 CoffeeScript, HTML, CSS, Linux, MacOS, iOS, Android, Java, Phonegap, Titanium
 Appcelerator, MySQL, PgSQL, Redis, GStreamer, Xulrunner, NPAPI, Arduino,
 ZeroRPC
@@ -218,7 +230,7 @@ ZeroRPC
 
 #### Master of science in Information Technology, full marks   *2010*
 
-[Politecnico di Torino](http://www.polito.it) - Turin, Italy
+[Politecnico di Torino](http://www.polito.it) - Torino, Italy
 
 Thesis: "Development of a fault-tolerant architecture based on software
 hypervisor technologies"
