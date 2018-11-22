@@ -12,7 +12,9 @@ const Title = () =>
     </h1>
     <style jsx>{`
       @import url('https://fonts.googleapis.com/css?family=Chau+Philomene+One');
-      .root { text-align: center; }
+      .root {
+        text-align: center;
+      }
       h1 {
         display: inline-block;
         margin: 0 auto;

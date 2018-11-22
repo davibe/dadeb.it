@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "now": "now -a dadeb",
+    "now": "now && now alias dadeb",
     "start": "next start"
   },
   "author": "Davide Bertola <dade@dadeb.it>",
@@ -14,8 +14,8 @@
     "markdown-in-js": "^1.1.4",
     "next": "^7.0.2",
     "prismjs": "^1.15.0",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1"
+    "react": "16.7.0-alpha.2",
+    "react-dom": "16.7.0-alpha.2"
   },
   "devDependencies": {
     "now": "^12.1.1"
