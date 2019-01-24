@@ -8,7 +8,6 @@ Davide Bertola
 
 IT Software Engineer
 
-
 Profile
 -------
 
@@ -29,7 +28,7 @@ dade@dadeb.it
 
 
 Current activities
-------------------
+-----------------
 
 #### Architect and Team Leader *June 2017 - Today*
 
