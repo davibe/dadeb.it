@@ -32,7 +32,7 @@ Current activities
 
 #### Architect and Team Leader *June 2017 - Today*
 
-> [Diva Mobile SDK](http://www.deltatre.com/online-solutions/diva/)
+> [Diva SDK](https://www.deltatre.com/solutions/ott)
 
 [Deltatre.it](http://www.deltatre.it) - Via Francesco Millio 41, 10141 Torino (TO)
 
