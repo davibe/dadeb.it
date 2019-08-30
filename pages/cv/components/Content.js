@@ -36,11 +36,20 @@ Current activities
 
 [Deltatre.it](http://www.deltatre.it) - Via Francesco Millio 41, 10141 Torino (TO)
 
-Complete rewrite of the Diva Player SDK for Android and iOS (native).
-An advanced player for sport events, distributed as Android AAR and iOS Framework,
-used by clients to implement large-scale mobile applications (UEFA, CBC, NFL, ...).
+Complete rewrite of the Diva Player SDK for Android, iOS and HTML5. An
+advanced player for sport events used by clients to implement large-scale
+mobile applications (UEFA, CBC, NFL, ...). Huge feature set including support
+for Google anlytics, Conviva media analytics, Akamai media analytics and
+content protection, Chromecast, Airplay, DRM, Entitlement, Heartbeat, 360
+videos, synchronized data views and overlays, Alerts, Video switch,
+Playlists, multi-angle. Managed developments as well as releases and support
+during important sport events worldwide.
 
-*Swift, Java/Android, Fastlane, TFS, CI*
+*Swift, Java, Kotlin, Android, React, Typescript, Angular, Fastlane, TFS, CI*
+
+
+Past experience
+---------------
 
 #### Chief Technology Officer  *Sept 2015 - Today*
 
@@ -58,10 +67,6 @@ Mixed scrum + kanban agile methods.
 
 *Amazon AWS + ECS, CoffeeScript, Java ES6, Next.js, React, Redux, Swift, SnapKit, 
 Java, Docker, Jenkins, Branch.io, Tune, GAnalitics*
-
-
-Past experience
----------------
 
 #### Principal Multimedia Engineer   *2010 - 2015*
 
