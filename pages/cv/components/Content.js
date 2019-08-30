@@ -51,7 +51,7 @@ during important sport events worldwide.
 Past experience
 ---------------
 
-#### Chief Technology Officer  *Sept 2015 - Today*
+#### Chief Technology Officer  *Sept 2015 - 2017*
 
 > [Backoffice](https://www.dropbox.com/sh/nzhmql0dn77fwaq/AAA9Iry1l-PG2IlwtGoo2lOga?dl=0)   
 > [Web/Social](https://www.dropbox.com/sh/8e3oivmqt2gi4al/AAAAMWGoCw1ty-b_vHsPdbIEa?dl=0)   
