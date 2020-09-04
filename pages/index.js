@@ -46,7 +46,7 @@ const Title = () =>
 
 const Index = () => (
   <div>
-    <Title />d
+    <Title />
   </div>
 )
 
