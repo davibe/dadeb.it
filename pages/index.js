@@ -47,6 +47,7 @@ const Title = () =>
 const Index = () => (
   <div>
     <Title />
+    <img src="static/drawings/home.jpeg" />
   </div>
 )
 
