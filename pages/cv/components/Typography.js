@@ -64,6 +64,9 @@ const Typography = (props) =>
   float: left;
   margin-right: .5cm;
   margin-left: .25cm;
+  border: 1px solid #ddd;
+  border-radius: 18px;
+  margin-top: -.5em;
 }
 
 
