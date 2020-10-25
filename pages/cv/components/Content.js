@@ -16,7 +16,7 @@ Profile
 > [Facebook](https://www.facebook.com/dadeb)  
 > [GitHub](https://github.com/davibe)  
 
-!["avatar"](static/cv.png)
+!["avatar"](static/avatar.png)
 Born on May 1, 1983
 
 Contact address:  
