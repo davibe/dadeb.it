@@ -88,7 +88,7 @@ const Typography = (props) =>
 }
 
 .typography-cv blockquote a {
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .typography-cv h2 + blockquote {
@@ -115,7 +115,6 @@ const Typography = (props) =>
 
 .typography-cv h4 + p,
 .typography-cv h4 + blockquote + p {
-  font-variant: small-caps;
   text-rendering: optimizeSpeed !important;
   margin-bottom: 0;
 }
