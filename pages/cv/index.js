@@ -4,7 +4,7 @@ import Content from './components/Content'
 import Typography from './components/Typography'
 
 
-export default () =>
+const Index = () =>
   <div>
 
     <Head>
@@ -27,3 +27,5 @@ export default () =>
     </A4>
 
   </div>
+
+export default Index
