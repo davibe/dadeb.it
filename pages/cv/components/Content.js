@@ -32,7 +32,8 @@ Current activities
 
 #### Architect and Team Leader *June 2017 - Today*
 
-> [Diva SDK](https://www.deltatre.com/solutions/ott)
+> [Diva Player SDK](https://www.deltatre.com/sport/diva)  
+> [Visuals](https://www.deltatre.com/sport/diva)
 
 [Deltatre.it](http://www.deltatre.it) - Via Francesco Millio 41, 10141 Torino (TO)
 
