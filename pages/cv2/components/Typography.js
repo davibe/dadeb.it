@@ -10,17 +10,16 @@ const colors = [
   '#af4848',
   '#15853a'
 ]
-Array.prototype.random = function () {
-  return this[Math.floor((Math.random() * this.length))];
-}
 
 const Typography = (props) => {
-  const [index, setIndex] = useState(0)
-  const color = colors[index % colors.length]
-  console.log(color)
-  return <div className="typography-cv" onClick={() => setIndex(i => i + 1)}>
-    {props.children}
-    <style jsx global>{`
+  const [colorIndex, colorIndexSet] = useState(0)
+  const color = colors[colorIndex % colors.length]
+  const colorNextAction = () => colorIndexSet(i => i + 1)
+
+  return <>
+    <div className="typography-cv" onClick={colorNextAction}>
+      {props.children}
+      <style jsx global>{`
 
 /* I manually scope style to this element using .typography-cv */
 
@@ -175,7 +174,8 @@ const Typography = (props) => {
 }
 
     `}</style>
-  </div>
+    </div>
+  </>
 }
 
 export default Typography
