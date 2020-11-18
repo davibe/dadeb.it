@@ -1,14 +1,14 @@
 // Applies css typography to child elements with unscoped styling
 
-import { useState } from "react";
+import { useState } from "react"
 
 const colors = [
+  '#15853a',
   '#801fde',
   '#de1fdd',
   '#1f6ade',
   '#a38314',
-  '#af4848',
-  '#15853a'
+  '#af4848'
 ]
 
 const Typography = (props) => {
@@ -162,6 +162,8 @@ const Typography = (props) => {
   text-align: right;
   float: left;
 }
+
+/* ensure lightgrays become printable */
 
 @media print {
   .typography-cv h4 + p + p + p,
