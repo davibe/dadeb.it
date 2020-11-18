@@ -17,7 +17,7 @@ const Typography = (props) => {
   const colorNextAction = () => colorIndexSet(i => i + 1)
 
   return <>
-    <div className="typography-cv" onClick={colorNextAction}>
+    <div className="typography-cv" onDoubleClick={colorNextAction}>
       {props.children}
       <style jsx global>{`
 
@@ -38,16 +38,17 @@ const Typography = (props) => {
   margin-bottom: 1em;
 }
 
+/* Title (Davide Bertola) */
 .typography-cv h1 {
-  _color: #589;
 }
+
+/* Subtitle (IT Software Engineer) */
 .typography-cv h1 + p {
   margin-top: .4em;
 }
 
 .typography-cv h2,
 .typography-cv h3 {
-  _color: #8bc;
   color: #666;
 }
 
@@ -86,8 +87,7 @@ const Typography = (props) => {
   margin-top: -.5em;
 }
 
-
-/* things on the left column */
+/* Left column stuff */
 
 .typography-cv h1,
 .typography-cv h2,
@@ -114,6 +114,8 @@ const Typography = (props) => {
 .typography-cv h2 + blockquote {
   margin-top: 38px;
 }
+
+/* Right column stuff */
 
 /* job title */
 
