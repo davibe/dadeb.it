@@ -17,14 +17,12 @@ Array.prototype.random = function () {
 const Typography = (props) => {
   const [index, setIndex] = useState(0)
   const color = colors[index % colors.length]
+  console.log(color)
   return <div className="typography-cv" onClick={ () => setIndex(i => i + 1) }>
     {props.children}
     <style jsx global>{`
 
 /* I manually scope style to this element using .typography-cv */
-
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
 .typography-cv {
   margin-left: 4.5cm;
@@ -44,7 +42,7 @@ const Typography = (props) => {
 .typography-cv h1 {
   _color: #589;
 }
-.typography-cv h1 + p{
+.typography-cv h1 + p {
   margin-top: .4em;
 }
 

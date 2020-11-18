@@ -1,2 +1,5 @@
-module.exports = () => ({})
-
+module.exports = {
+    webpack: (config) => {
+      return config
+    }
+  }
