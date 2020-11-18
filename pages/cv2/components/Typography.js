@@ -82,7 +82,7 @@ const Typography = (props) => {
   float: left;
   margin-right: .5cm;
   margin-left: .25cm;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   border-radius: 10px;
   margin-top: -.5em;
 }
