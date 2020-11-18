@@ -1,23 +1,36 @@
 // Applies css typography to child elements with unscoped styling
 
+import { useState } from "react"
 
-const Typography = (props) =>
-  <div className="typography-cv">
-    {props.children}
-    <style jsx global>{`
+const colors = [
+  '#15853a',
+  '#801fde',
+  '#de1fdd',
+  '#1f6ade',
+  '#a38314',
+  '#af4848'
+]
+
+const Typography = (props) => {
+  const [colorIndex, colorIndexSet] = useState(0)
+  const color = colors[colorIndex % colors.length]
+  const colorNextAction = () => colorIndexSet(i => i + 1)
+
+  return <>
+    <div className="typography-cv" onDoubleClick={colorNextAction}>
+      {props.children}
+      <style jsx global>{`
 
 /* I manually scope style to this element using .typography-cv */
-
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 .typography-cv {
   margin-left: 4.5cm;
   padding-left: .2cm;
   border-left: 1px solid #eee;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: lighter;
   opacity: .9;
-  font-size: 14px;
+  font-size: .9em;
   text-rendering: optimizelegibility;
 }
 
@@ -25,26 +38,31 @@ const Typography = (props) =>
   margin-bottom: 1em;
 }
 
+/* Title (Davide Bertola) */
 .typography-cv h1 {
-  color: #589;
+}
+
+/* Subtitle (IT Software Engineer) */
+.typography-cv h1 + p {
+  margin-top: .4em;
 }
 
 .typography-cv h2,
 .typography-cv h3 {
-  color: #8bc;
+  color: #666;
 }
 
 .typography-cv h1 {
-  font-size: 24px;
+  font-size: 1.6em;
 }
 
 .typography-cv h2 {
-  font-size: 19px;
+  font-size: 1.3em;
 }
 
 .typography-cv a,
 .typography-cv a:hover {
-  color: #af4848;
+  color: ${color};
   text-decoration: none;
 }
 
@@ -64,20 +82,19 @@ const Typography = (props) =>
   float: left;
   margin-right: .5cm;
   margin-left: .25cm;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   border-radius: 10px;
   margin-top: -.5em;
 }
 
-
-/* things on the left column */
+/* Left column stuff */
 
 .typography-cv h1,
 .typography-cv h2,
 .typography-cv h3 {
   width: 4.5cm;
   margin-left: -5cm;
-  margin-bottom: -1.1em;
+  margin-bottom: -1.18em;
   margin-top: 1.5em;
   text-align: right;
 }
@@ -87,22 +104,24 @@ const Typography = (props) =>
   margin-left: -5cm;
   margin-bottom: -1em;
   text-align: right;
-  float:left;
+  float: left;
 }
 
 .typography-cv blockquote a {
-  font-size: 13px;
+  font-size: .9em;
 }
 
 .typography-cv h2 + blockquote {
   margin-top: 38px;
 }
 
+/* Right column stuff */
+
 /* job title */
 
 .typography-cv h4 {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.1em;
 }
 
 /* job dates */
@@ -110,8 +129,9 @@ const Typography = (props) =>
 .typography-cv h4 em {
   float: right;
   font-weight: normal;
-  color: #aaa;
-  font-size: 14px;
+  color: #999;
+  font-size: .9em;
+  padding-right: .5em;
 }
 
 /* job address */
@@ -133,7 +153,7 @@ const Typography = (props) =>
 
 .typography-cv h4 + p + p + p,
 .typography-cv h4 + blockquote + p + p + p {
-  color: #aaa;
+  color: #999;
 }
 
 /* job contribs */
@@ -144,6 +164,8 @@ const Typography = (props) =>
   text-align: right;
   float: left;
 }
+
+/* ensure lightgrays become printable */
 
 @media print {
   .typography-cv h4 + p + p + p,
@@ -156,6 +178,8 @@ const Typography = (props) =>
 }
 
     `}</style>
-  </div>
+    </div>
+  </>
+}
 
 export default Typography

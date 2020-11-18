@@ -6,6 +6,10 @@ import Typography from './components/Typography'
 
 const Index = () =>
   <div>
+    <style jsx global>{`
+      @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+    `}</style>
 
     <Head>
       <style>{`

@@ -1,15 +1,11 @@
 import Head from 'next/head'
-import A4 from './../cv/components/A4'
-import Content from './../cv/components/Content'
+import A4 from './components/A4'
+import Content from './components/Content'
 import Typography from './components/Typography'
 
 
 const Index = () =>
   <div>
-    <style jsx global>{`
-      @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-      @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
-    `}</style>
 
     <Head>
       <style>{`
