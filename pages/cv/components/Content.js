@@ -47,7 +47,9 @@ videos, synchronized data views and overlays, Alerts, Video switch,
 Playlists, multi-angle. Managed developments as well as releases and support
 during important sport events worldwide.
 
-*Swift, Java, Kotlin, Android, React, Typescript, Angular, Fastlane, TFS, CI, ExoPlayer, AVPlayer, Hls.js, Shakaplayer, DASH, ClickUp, SCRUM, iOS, Android, Tizen, Web*
+*Swift, Java, Kotlin, Android, React, Typescript, Angular, Fastlane, TFS, CI, 
+ExoPlayer, AVPlayer, Hls.js, Shakaplayer, DASH, ClickUp, SCRUM, iOS, Android, 
+Tizen, Web*
 
 
 Past experience
