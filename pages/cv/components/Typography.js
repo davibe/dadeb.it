@@ -85,6 +85,7 @@ const Typography = (props) => {
   border: 1px solid #eee;
   border-radius: 10px;
   margin-top: -.5em;
+  background-color: ${color};
 }
 
 /* Left column stuff */
