@@ -3,10 +3,10 @@
 import { useState } from "react"
 
 const colors = [
-  '#801fde',
+  '#5b16bd',
+  '#1f6ade',
   '#15853a',
   '#de1fdd',
-  '#1f6ade',
   '#a38314',
   '#af4848'
 ]
