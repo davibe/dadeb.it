@@ -33,8 +33,8 @@ Current activities
 #### Architect and Team Leader *June 2017 - Today*
 
 > [Diva Player SDK](https://www.deltatre.com/sport/diva)  
-> [Screenshots](https://www.dropbox.com/sh/y06ebr7oqz0dgdu/AABzgx1jk1nZ4nZi_l2eHWT8a?dl=0)
-> [ExoPlayer contribution](https://github.com/google/ExoPlayer/pull/7064)
+> [Screenshots](https://www.dropbox.com/sh/y06ebr7oqz0dgdu/AABzgx1jk1nZ4nZi_l2eHWT8a?dl=0)  
+> [ExoPlayer contribution](https://github.com/google/ExoPlayer/pull/7064)  
 
 [Deltatre.it](http://www.deltatre.it) - Via Francesco Millio 41, 10141 Torino (TO)
 
