@@ -96,7 +96,7 @@ NPAPI, Redis, Amazon AWS, Wowza, Samsung SmartTVs, Android, iOS*
 #### Full-Stack Developer   *2014 - 2015*
 
 > [nginx-rtmp on EC2](https://medium.com/crowd-emotion/nginx-rtmp-on-ec2-97210e308d67)   
-> [janus-gateway contributions]](https://github.com/meetecho/janus-gateway/pulls?q=is%3Apr+author%3Adavibe+is%3Aclosed)
+> [janus-gateway contributions](https://github.com/meetecho/janus-gateway/pulls?q=is%3Apr+author%3Adavibe+is%3Aclosed)
 
 [CrowdEmotion](http://www.crowdemotion.co.uk/) - 201 Wood Lane, London W12 7TQ (UK)
 
