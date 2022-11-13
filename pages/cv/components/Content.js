@@ -38,7 +38,7 @@ and able to span across multiple disciplines and levels of detail when needed.
 Current activities
 -----------------
 
-#### Architect and Team Leader *June 2017 - Today*
+#### Architect and Team Leader *Mar 2017 - Today*
 
 > [Diva Player SDK](https://www.deltatre.com/sport/diva)  
 > [Screenshots](https://www.dropbox.com/sh/y06ebr7oqz0dgdu/AABzgx1jk1nZ4nZi_l2eHWT8a?dl=0)  
@@ -81,7 +81,7 @@ However today this slowly maintained by the community.
 Past experience
 ---------------
 
-#### Chief Technology Officer  *Sept 2015 - Jun 2017*
+#### Chief Technology Officer  *Sept 2015 - Dec 2017*
 
 > [Backoffice](https://www.dropbox.com/sh/nzhmql0dn77fwaq/AAA9Iry1l-PG2IlwtGoo2lOga?dl=0)   
 > [Web/Social](https://www.dropbox.com/sh/8e3oivmqt2gi4al/AAAAMWGoCw1ty-b_vHsPdbIEa?dl=0)   
