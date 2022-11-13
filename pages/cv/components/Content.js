@@ -27,6 +27,14 @@ Corso Fiume n. 91
 dade@dadeb.it
 
 
+About Me
+--------
+
+13 years of experience in the industry.
+Reliable and tireless problem solver, constant innovator and tech enthusiast. I
+am motivated by Results more than anything else, not attached to a specific role
+and able to span across multiple disciplines and levels of detail when needed.
+
 Current activities
 -----------------
 
@@ -45,17 +53,35 @@ for Google anlytics, Conviva media analytics, Akamai media analytics and
 content protection, Chromecast, Airplay, DRM, Entitlement, Heartbeat, 360
 videos, synchronized data views and overlays, Alerts, Video switch,
 Playlists, multi-angle. Managed developments as well as releases and support
-during important sport events worldwide.
+during important sport events worldwide. Worked across 3 squads (20+ people).
 
 *Swift, Java, Kotlin, Android, React, Typescript, Angular, Fastlane, TFS, CI, 
 ExoPlayer, AVPlayer, Hls.js, Shakaplayer, DASH, ClickUp, SCRUM, iOS, Android, 
 Tizen, Web*
 
 
+Personal Projects
+-----------------
+
+> [aya PRs](https://github.com/pulls?q=is%3Apr+author%3Adavibe+archived%3Afalse+aya+is%3Amerged+)  
+> [LLVM patch](https://reviews.llvm.org/D136637)  
+> [Multipass Plugin](https://github.com/pulls?q=is%3Apr+author%3Adavibe+archived%3Afalse+multipass+is%3Amerged+)  
+> [YakYak](https://github.com/yakyak/yakyak)  
+> [WebProducer](https://github.com/davibe/webproducer)
+
+I recently started learning Rust and doign System programming as a way to challenge myself. 
+I contributed to aya, a library for developing eBPF programs in Rust, and LLVM.
+I created a Raycast Plugin for controlling Multipass VMs.
+
+In the past I co-developed and maintained YakYak, a Google Talk chat client for desktop
+platform which became quite popular at some point. 
+However today this slowly maintained by the community.
+
+
 Past experience
 ---------------
 
-#### Chief Technology Officer  *Sept 2015 - 2017*
+#### Chief Technology Officer  *Sept 2015 - Jun 2017*
 
 > [Backoffice](https://www.dropbox.com/sh/nzhmql0dn77fwaq/AAA9Iry1l-PG2IlwtGoo2lOga?dl=0)   
 > [Web/Social](https://www.dropbox.com/sh/8e3oivmqt2gi4al/AAAAMWGoCw1ty-b_vHsPdbIEa?dl=0)   
@@ -67,12 +93,31 @@ Past experience
 Hired, grown, inspired, managed 5+ tech team.
 Built cloud based backend, iOS and Android apps, from requirements to delivery.
 Mixed scrum + kanban agile methods.  
-1M products, 30k users so far. The startup is currently idling while waiting for new funds.
+1M products, 35k users, ~100k reviews. The startup is now closed.
 
 *Amazon AWS + ECS, CoffeeScript, Java ES6, Next.js, React, Redux, Swift, SnapKit, 
 Java, Docker, Jenkins, Branch.io, Tune, GAnalitics*
 
-#### Principal Multimedia Engineer   *2010 - 2015*
+
+#### Software Engineer, full-stack   *Jan 2014 - Dec 2015*
+
+> [nginx-rtmp on EC2](https://medium.com/crowd-emotion/nginx-rtmp-on-ec2-97210e308d67)   
+> [janus-gateway contributions](https://github.com/meetecho/janus-gateway/pulls?q=is%3Apr+author%3Adavibe+is%3Aclosed)
+
+[CrowdEmotion](http://www.crowdemotion.co.uk/) - 201 Wood Lane, London W12 7TQ (UK)
+
+Developed cloud solution for capturing browser webcam streams
+using both RTMP (Flash) and WebRTC (HTML5) technologies.
+Recording, transcoding, indexing, media and metadata asset management.
+Realtime face recognition and emotion analysis on both client and
+server side. Recorded and analyzed 100k+ videos.
+
+*Javascript, node.js, Express.js, CoffeeScript, Webpack, npm, Python, Flask,
+Amazon AWS, Ansible, Docker.io, nginx, RTMP, FFmpeg, GStreamer,
+janus-gateway, ActionScript, kue, rq, CUDA*
+
+
+#### Principal Software Engineer   *Jan 2010 - Jan 2014*
 
 > [Wim.tv](http://cedeo.net/products/wim.tv.php)   
 > [GST Browser Plugin](https://github.com/davibe/gst-browser-plugin)   
@@ -92,27 +137,47 @@ Worked on new MPEG standards from proposal to final drafts.
 *C, C++, Objective-C, Javascript, Node.js, express.js, Backbone.js, GSreamer,
 NPAPI, Redis, Amazon AWS, Wowza, Samsung SmartTVs, Android, iOS*
 
+#### Software Engineer, Mobile   *Jan 2013 - Dec 2014*
 
-#### Full-Stack Developer   *2014 - 2015*
+> [WimTrade.tv](http://www.wimlance.tv)   
+> [WimLance App](https://www.dropbox.com/sh/ksrx63bn857ol9b/NlT1SUHhfK)
 
-> [nginx-rtmp on EC2](https://medium.com/crowd-emotion/nginx-rtmp-on-ec2-97210e308d67)   
-> [janus-gateway contributions](https://github.com/meetecho/janus-gateway/pulls?q=is%3Apr+author%3Adavibe+is%3Aclosed)
+[WimLabs](http://www.wimlabs.com) - Corso Castelfidardo 30/A 10129 Torino (TO)
 
-[CrowdEmotion](http://www.crowdemotion.co.uk/) - 201 Wood Lane, London W12 7TQ (UK)
+*CEDEO Spin-off*. iOS native universal aplication development for iOS 6.0+. Also developed the
+application backend and web counterpart.
 
-Developed cloud solution for capturing browser webcam streams
-using both RTMP (Flash) and WebRTC (HTML5) technologies.
-Recording, transcoding, indexing, media and metadata asset management.
-Realtime face recognition and emotion analysis on both client and
-server side. Recorded and analyzed 100k+ videos.
-
-*Javascript, node.js, Express.js, CoffeeScript, Webpack, npm, Python, Flask,
-Amazon AWS, Ansible, Docker.io, nginx, RTMP, FFmpeg, GStreamer,
-janus-gateway, ActionScript, kue, rq, CUDA*
+*ObjC, Grails, Groovy, PostgreSQL, GORM*
 
 
+#### Principal Multimedia Engineer    *Jan 2010*
 
-#### Advanced Mobile Web developer   *2014*
+[SmartRM](http://www.smartrm.com) - Corso Castelfidardo 17, 10129 Torino (TO)
+
+*CEDEO Spin-off*. Worked on a NPAPI cross-browser and cross-platform plugin to playback for DRM
+protected multimedia playback
+
+*C, C++, Javascript, GSreamer, XULRunner, XPCom, NPAPI*
+
+
+Spot Activities
+----------------
+
+
+#### Software Engineer, IoT, embedded, full-stack   *2020 - 2022*
+
+[Sportclubby](https://www.sportclubby.com/en) - 10141 Torino (TO)
+
+Developed an end-to-end recording camera solution for capturing matches played
+by clubs across Italy. 
+The cameras is based on Raspberry hardware and can be controlled through a
+backoffice as well as an iOS/Android App which is used directly by players at
+the club.
+
+*Rust, Node.js, React, Raspberry PI*
+
+
+#### Software Engineer, mobile web  *2014*
 
 > [PagineBianche](http://m.paginebianche.it)   
 > [PagineGialle](http://m.paginegialle.it)   
@@ -126,20 +191,7 @@ through a smooth and responsive user interface.
 *html5/css, Backbone.js, Underscore.js, React.js, Bower, Git, node.js, Java*
 
 
-#### Consultant Mobile and WebApplication developer   *2013 - 2014*
-
-> [WimTrade.tv](http://www.wimlance.tv)   
-> [WimLance App](https://www.dropbox.com/sh/ksrx63bn857ol9b/NlT1SUHhfK)
-
-[WimLabs](http://www.wimlabs.com) - Corso Castelfidardo 30/A 10129 Torino (TO)
-
-iOS native universal aplication development for iOS 6.0+. Also developed the
-application backend and web counterpart.
-
-*ObjC, Grails, Groovy, PostgreSQL, GORM*
-
-
-#### iOS Training   *2013*
+#### iOS Training Teacher   *2013*
 
 [Delpho](http://www.delpho.it) - Via Vandalino 66/e - Torino (TO)  
 
@@ -148,7 +200,7 @@ Organization and teaching activities for the "advanced iOS development" course.
 *iOS, ObjC*
 
 
-#### Consultant Mobile Developer   *2013*
+#### Software Engineer, mobile   *2013*
 
 > [ShareDocs iOS](https://itunes.apple.com/it/app/sharedocs/id501170431?mt=8&uo=4)
 
@@ -159,7 +211,7 @@ Mobile application development, maintainment and porting from iOS to Android
 *Javascript, Titanium Appcelerator*
 
 
-#### Mobile Developer    *2011 - 2012*
+#### Software Engineer, mobile    *2011 - 2012*
 
 > [GTT App](https://itunes.apple.com/it/app/gtt-mobile/id531319309?mt=8&uo=4)  
 > [jQMobile Author](https://github.com/jquery/jquery-mobile/blob/master/AUTHORS.txt#L53)
@@ -172,7 +224,7 @@ Applications development for iOS and Android
 Appcelerator*
 
 
-#### Consultant Developer   *sep 2011 - feb 2012*
+#### Software Engineer, full-stack   *sep 2011 - feb 2012*
 
 > [Camut Cloud](../static/camut/readme.html)
 
@@ -185,7 +237,7 @@ metrics
 *Node.js, Javascript, Amazon AWS, OpenTSDB*
 
 
-#### Mobile Developer    *feb 2011 - nov 2012*
+#### Software Engineer, mobile    *feb 2011 - nov 2012*
 
 > [WasabiMobile](http://www.mywasabi.it)  
 > [Phonegap SQLitePlugin](https://github.com/davibe/Phonegap-SQLitePlugin)
@@ -198,40 +250,13 @@ targeting iOS and Android tablets and phones
 *C, Java, ObjC, Javascript, Python, CoffeeScript, Phonegap/Cordova*
 
 
-#### Principal Multimedia Engineer    *2010*
-
-[SmartRM](http://www.smartrm.com) - Corso Castelfidardo 17, 10129 Torino (TO)
-
-Worked on a NPAPI cross-browser and cross-platform plugin to playback for DRM
-protected multimedia playback
-
-*C, C++, Javascript, GSreamer, XULRunner, XPCom, NPAPI*
-
-
 #### Web developer    *2005 - 2008*
 
 [S.I.S](http://www.sisteam.net/home.html) - Corso Vittorio Emanuele 70, 13049 Tronzano V.se (VC)
 
-Web development, system administration
+Web development, system administration, during university
 
 *Linux OS, Python, HTML, CSS*
-
-
-Projects
---------
-
-[Yakyak](https://github.com/yakyak/yakyak) - Crossplatform desktop client for Google Hangout  
-[Castoro](https://github.com/davibe/castoro) - Stream videos to Chromecast devices  
-[WebProducer](https://github.com/davibe/webproducer) - Live webcam stream from your browser
-
-
-## Skills
-
-Python, C, Swift, Javascript, Vim, Autotools, gcc, gdb, XCode, OBJC, Bash, Cocoa,
-CoffeeScript, HTML, CSS, Linux, MacOS, iOS, Android, Java, Phonegap, Titanium
-Appcelerator, MySQL, PgSQL, Redis, GStreamer, Xulrunner, NPAPI, Arduino,
-ZeroRPC
-
 
 
 ## Education
