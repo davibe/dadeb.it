@@ -150,7 +150,7 @@ application backend and web counterpart.
 *ObjC, Grails, Groovy, PostgreSQL, GORM*
 
 
-#### Principal Multimedia Engineer    *Jan 2010*
+#### Software Engineer    *Jan 2010*
 
 [SmartRM](http://www.smartrm.com) - Corso Castelfidardo 17, 10129 Torino (TO)
 
