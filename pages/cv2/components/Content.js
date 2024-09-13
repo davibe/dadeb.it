@@ -30,7 +30,25 @@ dade@dadeb.it
 Current activities
 -----------------
 
-#### Architect and Team Leader *June 2017 - Today*
+#### Senior Software Engineer *Jan 2022 - Today*
+
+> [str0m](https://github.com/algesten/str0m/pulls?q=is%3Apr+author%3Adavibe+is%3Aclosed+)
+
+[Lookback Group](https://lookback.io) - Santa Cruz (CA), USA
+
+Focused on the WebRTC side of the Lookback products working on media formats,
+networking, security, and performances.
+Implemented a globally distributed low-latency SFU system supporting peer
+banwidth estimation, simulcast, recording as well as tailored user
+experiences and workflow based it.
+
+*Rust, Sans-IO, str0m, Typescript, WebRTC, AWS, CI*
+
+
+Past experience
+---------------
+
+#### Architect and Team Leader *June 2017 - Dec 2021*
 
 > [Diva Player SDK](https://www.deltatre.com/sport/diva)  
 > [Visuals](https://www.deltatre.com/sport/diva)
@@ -47,10 +65,6 @@ Playlists, multi-angle. Managed developments as well as releases and support
 during important sport events worldwide.
 
 *Swift, Java, Kotlin, Android, React, Typescript, Angular, Fastlane, TFS, CI*
-
-
-Past experience
----------------
 
 #### Chief Technology Officer  *Sept 2015 - 2017*
 
