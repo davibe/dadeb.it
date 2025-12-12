@@ -55,7 +55,7 @@ const Index = () => (
             width: 100%; 
             height: 100%; 
             overflow: hidden;
-            background-image: url("static/drawings/home.jpeg");
+            background-image: url("/drawings/home.jpeg");
             background-repeat: no-repeat;
             background-size: 210%;
             background-attachment: fixed;
