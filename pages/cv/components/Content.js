@@ -1,7 +1,7 @@
 
-import markdown from 'markdown-in-js'
+import Markdown from 'react-markdown'
 
-const Content = () => markdown`
+const content = `
 
 Davide Bertola
 ==============
@@ -16,7 +16,7 @@ Profile
 > [Facebook](https://www.facebook.com/dadeb)  
 > [GitHub](https://github.com/davibe)  
 
-!["avatar"](static/avatar.png)
+!["avatar"](/avatar.png)
 Born on May 20, 1983
 
 Contact address:  
@@ -38,7 +38,45 @@ and able to span across multiple disciplines and levels of detail when needed.
 Current activities
 -----------------
 
-#### Architect and Team Leader *Mar 2017 - Today*
+#### Senior Software Engineer *Jan 2022 - Today*
+
+> [str0m](https://github.com/algesten/str0m/pulls?q=is%3Apr+author%3Adavibe+is%3Aclosed+)
+
+[Lookback Group](https://lookback.io) - Santa Cruz (CA), USA
+
+Focused on the WebRTC side of the Lookback products working on media formats,
+networking, security, and performances.
+Implemented a globally distributed low-latency SFU system supporting peer
+banwidth estimation, simulcast, recording as well as tailored user
+experiences and workflow based it.
+
+*Rust, Sans-IO, str0m, Typescript, WebRTC, AWS, CI*
+
+
+
+
+Personal Projects
+-----------------
+
+> [aya PRs](https://github.com/pulls?q=is%3Apr+author%3Adavibe+archived%3Afalse+aya+is%3Amerged+)  
+> [LLVM patch](https://reviews.llvm.org/D136637)  
+> [Multipass Plugin](https://github.com/pulls?q=is%3Apr+author%3Adavibe+archived%3Afalse+multipass+is%3Amerged+)  
+> [YakYak](https://github.com/yakyak/yakyak)  
+> [WebProducer](https://github.com/davibe/webproducer)
+
+I am getting more and more in Network and System programming as a way to challenge myself. 
+I contributed to aya, a library for developing eBPF programs in Rust, and LLVM.
+I created a Raycast Plugin for controlling Multipass VMs.
+
+In the past I co-developed and maintained YakYak, a Google Talk chat client for desktop
+platform which became quite popular at some point. 
+However today this slowly maintained by the community.
+
+
+Past experience
+---------------
+
+#### Architect and Team Leader *Mar 2017 - Dec 2021*
 
 > [Diva Player SDK](https://www.deltatre.com/sport/diva)  
 > [Screenshots](https://www.dropbox.com/sh/y06ebr7oqz0dgdu/AABzgx1jk1nZ4nZi_l2eHWT8a?dl=0)  
@@ -58,28 +96,6 @@ during important sport events worldwide. Worked across 3 squads (20+ people).
 *Swift, Java, Kotlin, Android, React, Typescript, Angular, Fastlane, TFS, CI, 
 ExoPlayer, AVPlayer, Hls.js, Shakaplayer, DASH, ClickUp, SCRUM, iOS, Android, 
 Tizen, Web*
-
-
-Personal Projects
------------------
-
-> [aya PRs](https://github.com/pulls?q=is%3Apr+author%3Adavibe+archived%3Afalse+aya+is%3Amerged+)  
-> [LLVM patch](https://reviews.llvm.org/D136637)  
-> [Multipass Plugin](https://github.com/pulls?q=is%3Apr+author%3Adavibe+archived%3Afalse+multipass+is%3Amerged+)  
-> [YakYak](https://github.com/yakyak/yakyak)  
-> [WebProducer](https://github.com/davibe/webproducer)
-
-I recently started learning Rust and doign System programming as a way to challenge myself. 
-I contributed to aya, a library for developing eBPF programs in Rust, and LLVM.
-I created a Raycast Plugin for controlling Multipass VMs.
-
-In the past I co-developed and maintained YakYak, a Google Talk chat client for desktop
-platform which became quite popular at some point. 
-However today this slowly maintained by the community.
-
-
-Past experience
----------------
 
 #### Chief Technology Officer  *Sept 2015 - Dec 2017*
 
@@ -226,7 +242,7 @@ Appcelerator*
 
 #### Software Engineer, full-stack   *sep 2011 - feb 2012*
 
-> [Camut Cloud](../static/camut/readme.html)
+> [Camut Cloud](/camut/readme.html)
 
 [Deltatre](http://www.deltatre.it) - Via Francesco Millio 41, 10141 Torino
 
@@ -291,5 +307,7 @@ Java
 Italian (native) and English (good)
 
 `
+
+const Content = () => <Markdown>{content}</Markdown>
 
 export default Content
