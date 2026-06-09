@@ -1,33 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
 
-const projects = [
-  {
-    name: 'str0m',
-    meta: 'Rust / WebRTC',
-    href: 'https://github.com/algesten/str0m/pulls?q=is%3Apr+author%3Adavibe+is%3Aclosed+',
-    description: 'Work around media, networking, security, and low-latency real-time communication.'
-  },
-  {
-    name: 'aya',
-    meta: 'Rust / eBPF',
-    href: 'https://github.com/pulls?q=is%3Apr+author%3Adavibe+archived%3Afalse+aya+is%3Amerged+',
-    description: 'Contributions to the Rust ecosystem for writing and shipping eBPF programs.'
-  },
-  {
-    name: 'WebProducer',
-    meta: 'Media / Streaming',
-    href: 'https://github.com/davibe/webproducer',
-    description: 'A web producer experiment from the long-running interest in live media tooling.'
-  },
-  {
-    name: 'YakYak',
-    meta: 'Desktop / Open Source',
-    href: 'https://github.com/yakyak/yakyak',
-    description: 'A cross-platform chat client that became a useful community-maintained project.'
-  }
-]
-
 const repos = [
   {
     name: 'yakyak/yakyak',
@@ -68,7 +41,6 @@ const repos = [
 ]
 
 const socialLinks = [
-  ['CV', '/cv'],
   ['GitHub', 'https://github.com/davibe'],
   ['LinkedIn', 'https://www.linkedin.com/pub/davide-bertola/3/601/782'],
   ['X', 'https://twitter.com/dadeb'],
@@ -96,6 +68,7 @@ const HomePreview = () => (
             I work across WebRTC, Rust, media systems, networking, and
             pragmatic product engineering.
           </p>
+          <a className="cvLink" href="/cv">Full CV</a>
           <nav aria-label="Primary links">
             {socialLinks.map(([label, href]) => (
               <a key={label} href={href}>
@@ -109,24 +82,6 @@ const HomePreview = () => (
           <div className="portraitFrame">
             <img src="/avatar.png" alt="Davide Bertola avatar" />
           </div>
-        </div>
-      </section>
-
-      <section className="work">
-        <div className="sectionHeader">
-          <h2>Selected Work</h2>
-          <a href="/cv">Full CV</a>
-        </div>
-        <div className="projectGrid">
-          {projects.map(project => (
-            <article key={project.name}>
-              <a href={project.href}>
-                <span>{project.name}</span>
-                <small>{project.meta}</small>
-              </a>
-              <p>{project.description}</p>
-            </article>
-          ))}
         </div>
       </section>
 
@@ -241,9 +196,14 @@ const HomePreview = () => (
         display: flex;
         flex-wrap: wrap;
         gap: 8px 0;
-        margin-top: 34px;
+        margin-top: 28px;
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         font-size: 15px;
+      }
+      .cvLink {
+        display: inline-block;
+        margin-top: 24px;
+        font-size: 19px;
       }
       nav a {
         text-decoration: underline;
@@ -256,13 +216,8 @@ const HomePreview = () => (
         text-decoration: none;
       }
       .sectionHeader a {
-        border: 1px solid rgba(22, 20, 17, .22);
-        background: rgba(255, 255, 255, .62);
-        padding: 8px 12px;
-        border-radius: 999px;
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         font-size: 14px;
-        text-decoration: none;
       }
       .portrait {
         justify-self: center;
@@ -311,12 +266,10 @@ const HomePreview = () => (
         font-size: 24px;
         font-weight: 500;
       }
-      .projectGrid p,
       .repoList p {
         font-size: 18px;
         line-height: 1.48;
       }
-      .work,
       .activity {
         padding-top: 42px;
       }
@@ -330,12 +283,6 @@ const HomePreview = () => (
       .sectionHeader h2 {
         margin: 0;
       }
-      .projectGrid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
-      }
-      .projectGrid article,
       .repoList article,
       .timeline {
         min-height: 168px;
@@ -344,7 +291,6 @@ const HomePreview = () => (
         background: rgba(255, 255, 255, .56);
         padding: 18px;
       }
-      .projectGrid a,
       .repoList a {
         display: grid;
         gap: 4px;
@@ -388,21 +334,14 @@ const HomePreview = () => (
           justify-self: start;
           width: min(250px, 72vw);
         }
-        .projectGrid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
       }
       @media (max-width: 560px) {
         main {
           width: min(100% - 22px, 520px);
         }
-        .projectGrid {
-          grid-template-columns: 1fr;
-        }
         .lead {
           font-size: 22px;
         }
-        .projectGrid p,
         .repoList p {
           font-size: 16px;
         }
