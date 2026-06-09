@@ -41,6 +41,7 @@ const repos = [
 ]
 
 const socialLinks = [
+  ['CV', '/cv'],
   ['GitHub', 'https://github.com/davibe'],
   ['LinkedIn', 'https://www.linkedin.com/pub/davide-bertola/3/601/782'],
   ['X', 'https://twitter.com/dadeb'],
@@ -68,7 +69,6 @@ const HomePreview = () => (
             I work across WebRTC, Rust, media systems, networking, and
             pragmatic product engineering.
           </p>
-          <a className="cvLink" href="/cv">Full CV</a>
           <nav aria-label="Primary links">
             {socialLinks.map(([label, href]) => (
               <a key={label} href={href}>
@@ -104,24 +104,23 @@ const HomePreview = () => (
 
         <div>
           <div className="sectionHeader">
-            <h2>From X</h2>
-            <a href="https://twitter.com/dadeb">@dadeb</a>
+            <h2>Instagram</h2>
+            <a href="https://www.instagram.com/dadeb/">@dadeb</a>
           </div>
-          <div className="timeline">
-            <a
-              className="twitter-timeline"
-              data-height="420"
-              data-chrome="noheader nofooter noborders transparent"
-              href="https://twitter.com/dadeb"
+          <div className="instagramFrame">
+            <blockquote
+              className="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/dadeb/"
+              data-instgrm-version="14"
             >
-              Posts by @dadeb
-            </a>
+              <a href="https://www.instagram.com/dadeb/">View @dadeb on Instagram</a>
+            </blockquote>
           </div>
         </div>
       </section>
     </main>
 
-    <Script src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" />
+    <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
 
     <style jsx global>{`
       html,
@@ -199,11 +198,6 @@ const HomePreview = () => (
         margin-top: 28px;
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         font-size: 15px;
-      }
-      .cvLink {
-        display: inline-block;
-        margin-top: 24px;
-        font-size: 19px;
       }
       nav a {
         text-decoration: underline;
@@ -284,7 +278,7 @@ const HomePreview = () => (
         margin: 0;
       }
       .repoList article,
-      .timeline {
+      .instagramFrame {
         min-height: 168px;
         border: 1px solid rgba(22, 20, 17, .16);
         border-radius: 8px;
@@ -313,9 +307,15 @@ const HomePreview = () => (
       .repoList p {
         margin-bottom: 10px;
       }
-      .timeline {
+      .instagramFrame {
         overflow: hidden;
         min-height: 420px;
+      }
+      .instagram-media {
+        max-width: 100% !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
       }
       @media (max-width: 860px) {
         main {
