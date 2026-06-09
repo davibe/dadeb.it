@@ -1,8 +1,9 @@
 import Head from 'next/head'
+import HomePage from '../components/HomePage'
 
 const siteUrl = 'https://dadeb.it'
 const pageTitle = 'Davide Bertola - Software Engineer'
-const pageDescription = 'Davide Bertola is a software engineer focused on WebRTC, Rust, media systems, networking, and product engineering.'
+const pageDescription = 'Davide Bertola is a software engineer focused on WebRTC, Rust, media systems, networking, and pragmatic product engineering.'
 
 const personStructuredData = {
   '@context': 'https://schema.org',
@@ -16,7 +17,9 @@ const personStructuredData = {
   sameAs: [
     'https://github.com/davibe',
     'https://twitter.com/dadeb',
-    'https://www.linkedin.com/pub/davide-bertola/3/601/782'
+    'https://www.linkedin.com/pub/davide-bertola/3/601/782',
+    'https://www.instagram.com/dadeb/',
+    'https://www.facebook.com/dadeb'
   ],
   knowsAbout: [
     'Software engineering',
@@ -27,53 +30,11 @@ const personStructuredData = {
   ]
 }
 
-const Title = () =>
-  <div className="root">
-    <h1>
-      <span>d</span>
-      <span>a</span>
-      <span>d</span>
-      <span>e</span>
-      <span>b</span>
-    </h1>
-    <style jsx>{`
-      @import url('https://fonts.googleapis.com/css?family=Chau+Philomene+One');
-      .root {
-        text-align: center;
-      }
-      h1 {
-        display: inline-block;
-        margin: 0 auto;
-        font-family: 'Chau Philomene One', sans-serif;
-        font-size: 72px;
-        font-weight: 100;
-        color: rgba(0, 0, 0, 0.9);
-        background-color: white;
-      }
-      h1 > span {
-        display: inline-block;
-        margin: 0; padding: 0;
-        height: 1em; width: .1em;
-        text-align: center;
-        opacity: 0;
-        transition: all .1s ease-in-out;
-      }
-      h1 > span:first-child, h1 > span:last-child {
-        opacity: 1;
-      }
-      h1:hover span {
-        opacity: .8;
-        width: .4em;
-        transition: all .5s ease-in-out;
-      }
-    `}</style>
-  </div>
-
-
 const Index = () => (
-  <div>
+  <>
     <Head>
       <title>{pageTitle}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={pageDescription} />
       <meta name="author" content="Davide Bertola" />
       <meta name="robots" content="index,follow" />
@@ -94,24 +55,9 @@ const Index = () => (
           __html: JSON.stringify(personStructuredData)
         }}
       />
-      <style dangerouslySetInnerHTML={{ 
-        __html: `
-          body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: hidden;
-            background-image: url("/drawings/home.jpeg");
-            background-repeat: no-repeat;
-            background-size: 210%;
-            background-attachment: fixed;
-          }
-        `
-      }} />
     </Head>
-    <Title />
-  </div>
+    <HomePage />
+  </>
 )
 
 export default Index
