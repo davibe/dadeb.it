@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import A4 from './components/A4'
-import Content from './components/Content'
-import Typography from './components/Typography'
+import A4 from '../../components/cv/A4'
+import Content from '../../components/cv/Content'
+import Typography from '../../components/cv/Typography'
 
 
 const Index = () =>
