@@ -88,11 +88,13 @@ const HomePreview = () => (
     <main>
       <section className="hero">
         <div className="identity">
-          <p className="mark">dadeb</p>
           <h1>Davide Bertola</h1>
           <p className="lead">
-            Software engineer working across WebRTC, Rust, media systems,
-            networking, and pragmatic product engineering.
+            Software engineer, AI whisperer, entrepreneur, father of two.
+          </p>
+          <p className="sublead">
+            I work across WebRTC, Rust, media systems, networking, and
+            pragmatic product engineering.
           </p>
           <nav aria-label="Primary links">
             {socialLinks.map(([label, href]) => (
@@ -107,25 +109,6 @@ const HomePreview = () => (
           <div className="portraitFrame">
             <img src="/avatar.png" alt="Davide Bertola avatar" />
           </div>
-        </div>
-      </section>
-
-      <section className="bio">
-        <div>
-          <h2>Now</h2>
-          <p>
-            I work on the WebRTC side of Lookback products, mostly around
-            media formats, networking, security, performance, and globally
-            distributed low-latency systems.
-          </p>
-        </div>
-        <div>
-          <h2>About</h2>
-          <p>
-            I like hard engineering problems with real users at the other end:
-            transport protocols, media pipelines, developer tools, system
-            programming, and small interfaces that make complex work easier.
-          </p>
         </div>
       </section>
 
@@ -230,17 +213,6 @@ const HomePreview = () => (
       .identity {
         max-width: 680px;
       }
-      .mark {
-        display: inline-block;
-        margin: 0 0 28px;
-        padding: 4px 12px 8px;
-        border: 1px solid rgba(22, 20, 17, .18);
-        background: rgba(255, 255, 255, .68);
-        font-family: 'Chau Philomene One', Georgia, serif;
-        font-size: 46px;
-        line-height: .9;
-        letter-spacing: 0;
-      }
       h1,
       h2,
       p {
@@ -258,13 +230,31 @@ const HomePreview = () => (
         font-size: clamp(22px, 3vw, 34px);
         line-height: 1.22;
       }
+      .sublead {
+        max-width: 620px;
+        margin-top: 18px;
+        color: rgba(22, 20, 17, .74);
+        font-size: 21px;
+        line-height: 1.42;
+      }
       nav {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 8px 0;
         margin-top: 34px;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 15px;
       }
-      nav a,
+      nav a {
+        text-decoration: underline;
+      }
+      nav a:not(:last-child)::after {
+        content: '/';
+        display: inline-block;
+        margin: 0 10px;
+        color: rgba(22, 20, 17, .34);
+        text-decoration: none;
+      }
       .sectionHeader a {
         border: 1px solid rgba(22, 20, 17, .22);
         background: rgba(255, 255, 255, .62);
@@ -311,23 +301,16 @@ const HomePreview = () => (
         object-fit: contain;
         filter: saturate(.72) contrast(1.05);
       }
-      .bio,
       .activity {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 24px;
-      }
-      .bio {
-        border-top: 1px solid rgba(22, 20, 17, .16);
-        border-bottom: 1px solid rgba(22, 20, 17, .16);
-        padding: 34px 0;
       }
       h2 {
         margin-bottom: 12px;
         font-size: 24px;
         font-weight: 500;
       }
-      .bio p,
       .projectGrid p,
       .repoList p {
         font-size: 18px;
@@ -393,7 +376,6 @@ const HomePreview = () => (
           width: min(680px, calc(100% - 28px));
         }
         .hero,
-        .bio,
         .activity {
           grid-template-columns: 1fr;
         }
@@ -420,7 +402,6 @@ const HomePreview = () => (
         .lead {
           font-size: 22px;
         }
-        .bio p,
         .projectGrid p,
         .repoList p {
           font-size: 16px;
