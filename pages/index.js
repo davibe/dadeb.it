@@ -3,13 +3,13 @@ import HomePage from '../components/HomePage'
 
 const siteUrl = 'https://dadeb.it'
 const pageTitle = 'Davide Bertola - Software Engineer'
-const pageDescription = 'Davide Bertola is a software engineer focused on WebRTC, Rust, media systems, networking, and pragmatic product engineering.'
+const pageDescription = 'Davide Bertola, known online as dadeb and davibe, is a software engineer focused on WebRTC, Rust, media systems, networking, and pragmatic product engineering.'
 
 const personStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Davide Bertola',
-  alternateName: 'dadeb',
+  alternateName: ['dadeb', 'davibe'],
   url: siteUrl,
   image: `${siteUrl}/avatar.png`,
   jobTitle: 'Software Engineer',
@@ -37,6 +37,7 @@ const Index = () => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={pageDescription} />
       <meta name="author" content="Davide Bertola" />
+      <meta name="keywords" content="Davide Bertola, dadeb, davibe, software engineer" />
       <meta name="robots" content="index,follow" />
       <link rel="canonical" href={siteUrl} />
       <meta property="og:type" content="profile" />
