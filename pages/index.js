@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import HomePage from '../components/HomePage'
 
-const siteUrl = 'https://dadeb.it'
+const siteOrigin = 'https://dadeb.it'
+const siteUrl = `${siteOrigin}/`
 const pageTitle = 'Davide Bertola - Software Engineer'
 const pageDescription = 'Davide Bertola, known online as dadeb and davibe, is a software engineer focused on WebRTC, Rust, media systems, networking, and pragmatic product engineering.'
 
@@ -11,7 +12,7 @@ const personStructuredData = {
   name: 'Davide Bertola',
   alternateName: ['dadeb', 'davibe'],
   url: siteUrl,
-  image: `${siteUrl}/avatar.png`,
+  image: `${siteOrigin}/avatar.png`,
   jobTitle: 'Software Engineer',
   email: 'mailto:dade@dadeb.it',
   sameAs: [
@@ -45,11 +46,11 @@ const Index = () => (
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:url" content={siteUrl} />
-      <meta property="og:image" content={`${siteUrl}/avatar.png`} />
+      <meta property="og:image" content={`${siteOrigin}/avatar.png`} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />
-      <meta name="twitter:image" content={`${siteUrl}/avatar.png`} />
+      <meta name="twitter:image" content={`${siteOrigin}/avatar.png`} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
